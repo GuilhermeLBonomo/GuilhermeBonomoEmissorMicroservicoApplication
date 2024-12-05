@@ -27,8 +27,7 @@ pipeline {
                                 }
                             }
                         }
-                    }
-            }
+        }
 
 
         stage('Construir Imagem Docker') {
