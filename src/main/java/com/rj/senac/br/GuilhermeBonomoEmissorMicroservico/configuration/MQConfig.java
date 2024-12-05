@@ -16,7 +16,7 @@ public class MQConfig {
 
     @Bean
     public CachingConnectionFactory connectionFactory() {
-        CachingConnectionFactory factory = new CachingConnectionFactory("localhost");
+        CachingConnectionFactory factory = new CachingConnectionFactory("rabbitmq");
         factory.setUsername("admin");
         factory.setPassword("admin123");
         return factory;
