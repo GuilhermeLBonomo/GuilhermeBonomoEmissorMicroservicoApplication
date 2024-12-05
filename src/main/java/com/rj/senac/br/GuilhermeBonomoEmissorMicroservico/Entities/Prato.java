@@ -3,6 +3,7 @@ package com.rj.senac.br.GuilhermeBonomoEmissorMicroservico.Entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+
 public class Prato implements Serializable {
     private long id;
     private String descricao;

@@ -13,4 +13,5 @@ services:
 
 networks:
   rede_prova:
-      external: true
+      external:
+         name: rede_prova
