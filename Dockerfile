@@ -1,4 +1,3 @@
-
 # Etapa 1: Use uma imagem base do Maven para compilar o código
 FROM maven:latest AS build
 LABEL authors="Guilherme Bonomo"

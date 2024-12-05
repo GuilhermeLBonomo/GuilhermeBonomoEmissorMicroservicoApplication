@@ -13,11 +13,11 @@ public class PratoService {
     private RabbitTemplate rabbitTemplate;
 
     public Prato adicionar(Prato prato) {
-        rabbitTemplate.convertAndSend("fila-restaurante", prato);
+        rabbitTemplate.convertAndSend("pratos-restaurante-request-exchange","pratos-restaurante-request-rout-key", prato);
         return prato;
     }
 
-    @RabbitListener(queues = "fila-restaurante")
+    @RabbitListener(queues = "pratos-restaurante-request-queue")
     private void subscribe(Prato prato) {
         System.out.println("Recebido do RabbitMQ: " + prato);
     }

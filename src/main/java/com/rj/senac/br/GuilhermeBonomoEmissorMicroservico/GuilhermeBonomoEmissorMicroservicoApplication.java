@@ -10,6 +10,7 @@ public class GuilhermeBonomoEmissorMicroservicoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GuilhermeBonomoEmissorMicroservicoApplication.class, args);
+		System.out.println("Rodando o Emissor");
 	}
 
 }
