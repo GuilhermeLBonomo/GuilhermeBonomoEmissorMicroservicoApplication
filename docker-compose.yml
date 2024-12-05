@@ -10,6 +10,8 @@ services:
       - "8081:8081"
     networks:
       - rede_prova
+    environment:
+      SPRING_RABBITMQ_HOST: rabbitmq
 
 networks:
   rede_prova:

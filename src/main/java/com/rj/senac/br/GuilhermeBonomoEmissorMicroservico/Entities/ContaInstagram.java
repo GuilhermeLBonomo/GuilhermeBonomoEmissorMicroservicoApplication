@@ -8,7 +8,7 @@ public class ContaInstagram implements Serializable {
     private long id;
     private String nome;
     private boolean status;
-    private short idde;
+    private short idade;
 
     private int totalSeguidores;
 
@@ -36,12 +36,12 @@ public class ContaInstagram implements Serializable {
         this.status = status;
     }
 
-    public short getIdde() {
-        return idde;
+    public short getIdade() {
+        return idade;
     }
 
-    public void setIdde(short idde) {
-        this.idde = idde;
+    public void setIdade(short idade) {
+        this.idade = idade;
     }
 
     public int getTotalSeguidores() {
@@ -58,7 +58,7 @@ public class ContaInstagram implements Serializable {
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", status=" + status +
-                ", idde=" + idde +
+                ", idde=" + idade +
                 ", totalSeguidores=" + totalSeguidores +
                 '}';
     }
@@ -68,11 +68,11 @@ public class ContaInstagram implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ContaInstagram that = (ContaInstagram) o;
-        return id == that.id && status == that.status && idde == that.idde && totalSeguidores == that.totalSeguidores && Objects.equals(nome, that.nome);
+        return id == that.id && status == that.status && idade == that.idade && totalSeguidores == that.totalSeguidores && Objects.equals(nome, that.nome);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome, status, idde, totalSeguidores);
+        return Objects.hash(id, nome, status, idade, totalSeguidores);
     }
 }
