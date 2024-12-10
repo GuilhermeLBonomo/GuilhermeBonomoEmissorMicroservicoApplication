@@ -3,7 +3,7 @@ package com.rj.senac.br.GuilhermeBonomoEmissorMicroservico.entities;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
 
 import java.io.Serializable;
 import java.util.Objects;
