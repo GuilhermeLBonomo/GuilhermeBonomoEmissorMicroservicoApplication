@@ -1,15 +1,26 @@
-package com.rj.senac.br.GuilhermeBonomoEmissorMicroservico.Entities;
+package com.rj.senac.br.GuilhermeBonomoEmissorMicroservico.entities;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import org.springframework.data.annotation.Id;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 
 public class ContaInstagram implements Serializable {
-    private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="Id",nullable = false)
+    private Long id;
+    @Column(name = "nome", nullable = false)
     private String nome;
+    @Column(name = "status", nullable = false)
     private boolean status;
+    @Column(name = "idade", nullable = false)
     private short idade;
-
+    @Column(name = "totalseguidores", nullable = false)
     private int totalSeguidores;
 
     public long getId() {

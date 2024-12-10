@@ -1,22 +1,23 @@
-package com.rj.senac.br.GuilhermeBonomoEmissorMicroservico.Services;
+package com.rj.senac.br.GuilhermeBonomoEmissorMicroservico.services;
 
-import com.rj.senac.br.GuilhermeBonomoEmissorMicroservico.Entities.ContaInstagram;
+import com.rj.senac.br.GuilhermeBonomoEmissorMicroservico.entities.ContaInstagram;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import com.rj.senac.br.GuilhermeBonomoEmissorMicroservico.repository.ContaInstagramRepository;
 @Service
 public class ContaInstagramService {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
+    private ContaInstagramRepository contaInstagramRepository;
 
     public ContaInstagram remover(ContaInstagram contaInstagram) {
         rabbitTemplate.convertAndSend("conta-instagram-request-exchange",
                 "conta-instagram-request-rout-key",
                 contaInstagram);
-
+        contaInstagramRepository.delete(contaInstagram);
         System.out.println("Conta Instagram removida: " + contaInstagram);
         return contaInstagram;
     }
